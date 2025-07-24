@@ -10,14 +10,14 @@ import ExperienceTab from "./components/tabs/ExperienceTab";
 import ProjectsTab from "./components/tabs/ProjectsTab";
 import CertificationsTab from "./components/tabs/CertificationsTab";
 import { ThemeToggle } from "./components/ThemeToggle";
-
+import { LanguageToggle } from "./components/LanguageToggle";
 
 export default function Home() {
     // Le tableau final des onglets avec tous les composants réels
     const tabs = [
-        { id: "home", label: "Accueil", icon: HomeIcon, component: <HomeTab /> },
-        { id: "experience", label: "Expérience", icon: Briefcase, component: <ExperienceTab /> },
-        { id: "projects", label: "Projets", icon: Code, component: <ProjectsTab /> },
+        { id: "home", label: "Home", icon: HomeIcon, component: <HomeTab /> },
+        { id: "experience", label: "Experience", icon: Briefcase, component: <ExperienceTab /> },
+        { id: "projects", label: "Projects", icon: Code, component: <ProjectsTab /> },
         { id: "certifications", label: "Certifications", icon: Award, component: <CertificationsTab /> },
     ];
 
@@ -29,15 +29,15 @@ export default function Home() {
     return (
         <main className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
             {/* --- Bouton de Thème --- */}
-            <div className="absolute top-5 right-5 z-50">
+            <div className="absolute top-5 right-5 z-50 flex items-center gap-4">
                 <ThemeToggle />
             </div>
 
             <div className="w-full max-w-5xl mx-auto">
                 {/* --- Section Entête / Profil --- */}
                 <div className="flex flex-col items-center mb-8 text-center">
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">ALEXANDRE DEMBELE</h1>
-                    <p className="text-base md:text-lg text-gray-300 mt-1">Ingénieur Systèmes & Réseaux | Cloud & DevOps | Cybersécurité</p>
+                    <h1 className="text-3xl md:text-4xl font-bold text-primary">ALEXANDRE DEMBELE</h1>
+                    <p className="text-base md:text-lg text-secondary mt-1">Systems & Network Engineer | Cloud & DevOps | Cybersecurity</p>
                 </div>
 
                 {/* --- Section Navigation par Onglets (Responsive) --- */}

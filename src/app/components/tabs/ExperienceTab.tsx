@@ -4,47 +4,47 @@ import { Badge } from '@/app/components/ui/Badge';
 
 const experiences = [
     {
-        role: "Administrateur Système",
-        company: "NEXAH SARL - Douala, Cameroun",
-        date: "Avril 2023 - Présent",
+        role: "System Administrator",
+        company: "NEXAH SARL - Douala, Cameroon",
+        date: "Avril 2023 - Present",
         tasks: [
-            "Migration d'une architecture AWS vers Kubernetes.",
-            "Administration de l'infrastructure cloud AWS.",
-            "Orchestration des applications avec Kubernetes & Helm.",
-            "Automatisation des déploiements CI/CD avec GitHub Actions (réduction des délais de 40%).",
-            "Optimisation des coûts cloud de 15% grâce à la containerisation.",
-            "Renforcement de la sécurité avec IAM et VPN IPSec."
+            "Migrated an AWS architecture to Kubernetes",
+            "Managed AWS cloud infrastructure",
+            "Orchestrated applications with Kubernetes & Helm, monitored with Prometheus.",
+            "Automated CI/CD deployments with GitHub Actions",
+            "Optimized cloud costs (-35% through Docker & Kubernetes containerization)",
+            "Strengthened security with IAM, IPSec VPN, and advanced monitoring."
         ],
         // On extrait les technologies clés pour les mettre en évidence
-        tech: ["AWS", "Kubernetes", "Docker", "Terraform", "Helm", "ArgoCD", "Prometheus", "CI/CD"]
+        tech: ["AWS", "Kubernetes", "Docker", "Terraform", "Helm", "ArgoCD", "Prometheus", "CI/CD", "EKS"]
     },
     {
-        role: "Stagiaire en Informatique",
+        role: "IT Intern",
         company: "COMETAL SA - Douala, Cameroun",
-        date: "Novembre 2021 - Janvier 2022",
+        date: "November 2021 - January 2022",
         tasks: [
-            "Administration et maintenance des serveurs Windows Server.",
-            "Gestion des sauvegardes et supervision des performances."
+            "Administered and maintained Windows Server systems.",
+            "Managed backups and monitored system performance. "
         ],
-        tech: ["Windows Server", "Gestion de sauvegardes"]
+        tech: ["Windows Server", "Network saves"]
     },
      {
-        role: "Stagiaire Administrateur Réseau",
+        role: "Network Administrator Intern",
         company: "SAUNYA Cosmetics Sarl - Douala, Cameroun",
-        date: "Novembre 2020 - Octobre 2021",
+        date: "November 2020 - October 2021",
         tasks: [
-            "Mise en place d'un cloud privé utilisant OpenStack.",
-            "Installation et configuration d'un portail captif avec pfSense.",
-            "Déploiement d'un datacenter avec serveurs rack et cluster Proxmox."
+            "Deployed a private OpenStack cloud.",
+            "Installed and configured a pfSense captive portal.",
+            "Set up a datacenter with rack servers and a Proxmox cluster."
         ],
-        tech: ["OpenStack", "pfSense", "Proxmox", "Serveurs Rack", "Synology"]
+        tech: ["OpenStack", "pfSense", "Proxmox", "Rack Server", "Synology"]
     }
 ];
 
 export default function ExperienceTab() {
     return (
         <div>
-            <h2 className="text-3xl font-bold text-green-400 mb-8 text-center">Parcours Professionnel</h2>
+            <h2 className="text-3xl font-bold text-green-400 mb-8 text-center">Professionnal Experience</h2>
             <div className="space-y-8">
                 {experiences.map((exp, index) => (
                     <div key={index} className="flex gap-4 sm:gap-6">
@@ -63,9 +63,9 @@ export default function ExperienceTab() {
                         <div className="w-full">
                            <div className="flex justify-between items-start mb-1 flex-col sm:flex-row">
                                <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
-                               <time className="text-sm font-normal text-gray-400 sm:ml-4 flex-shrink-0">{exp.date}</time>
+                               <time className="text-sm font-normal text-secondary sm:ml-4 flex-shrink-0">{exp.date}</time>
                            </div>
-                           <p className="text-base text-gray-400 mb-3">{exp.company}</p>
+                           <p className="text-base text-secondary mb-3">{exp.company}</p>
                            
                            <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm pl-2 mb-4">
                                {exp.tasks.map((task, i) => <li key={i}>{task}</li>)}

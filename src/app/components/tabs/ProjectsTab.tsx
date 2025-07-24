@@ -54,7 +54,7 @@ export default function ProjectsTab() {
 
     return (
         <div>
-            <h2 className="text-3xl font-bold text-green-400 mb-8 text-center">Mes Créations Récentes</h2>
+            <h2 className="text-3xl font-bold text-green-400 mb-8 text-center"> My Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map((project) => (
                     <div key={project.id} className="group relative bg-black/30 p-4 rounded-xl border border-white/10 transition-all duration-300 hover:border-green-500/50 hover:scale-105">

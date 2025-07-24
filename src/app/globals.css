@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    color: rgb(var(--foreground-rgb));
+    color: rgb(var(--text-primary)); /* On utilise la nouvelle variable ici */
     background: rgb(var(--background-rgb));
     min-height: 100vh;
   }
@@ -12,24 +12,35 @@
   /* --- Thème Sombre (par défaut) --- */
   :root, .dark {
     --background-rgb: 2, 6, 23;
-    --foreground-rgb: 229, 231, 235;
+    --foreground-rgb: 229, 231, 235; /* Gardé pour compatibilité, mais on utilise les nouveaux */
     --border-color: rgba(255, 255, 255, 0.1);
     --card-bg: rgba(17, 24, 39, 0.4);
-    --primary-glow: 34, 197, 94;  /* Vert */
-    --secondary-glow: 37, 99, 235;    /* Bleu */
+    --primary-glow: 34, 197, 94;
+    --secondary-glow: 37, 99, 235;
+
+    /* Nouvelles variables de texte */
+    --text-primary: 229, 231, 235;   /* Blanc cassé */
+    --text-secondary: 156, 163, 175; /* Gris */
+    --text-accent: 34, 197, 94;      /* Vert vif */
   }
 
   /* --- Thème Clair --- */
   .light {
-    --background-rgb: 243, 244, 246; /* Gris très clair */
-    --foreground-rgb: 17, 24, 39; /* Gris foncé */
+    --background-rgb: 243, 244, 246;
+    --foreground-rgb: 17, 24, 39;
     --border-color: rgba(0, 0, 0, 0.1);
     --card-bg: rgba(255, 255, 255, 0.4);
-    --primary-glow: 34, 197, 94; /* Vert */
-    --secondary-glow: 37, 99, 235; /* Bleu */
+    --primary-glow: 34, 197, 94;
+    --secondary-glow: 37, 99, 235;
+    
+    /* Nouvelles variables de texte */
+    --text-primary: 17, 24, 39;      /* Presque noir */
+    --text-secondary: 75, 85, 99;   /* Gris foncé */
+    --text-accent: 22, 163, 74;     /* Vert foncé */
   }
 }
 
+/* ... (le reste du fichier avec l'animation d'aurore ne change pas) ... */
 /* --- Animation de l'Aurore (fonctionne sur les deux thèmes) --- */
 .aurora-background {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;

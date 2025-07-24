@@ -1,8 +1,9 @@
-// src/app/layout.tsx
+// src/app/layout.tsx (Version Corrigée)
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./components/ThemeProvider"; // On créera ce fichier
+import { ThemeProvider } from "./components/ThemeProvider";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -17,7 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={spaceGrotesk.className}>
         <div className="aurora-background"></div>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
+          {/* Le LanguageProvider doit envelopper TOUT ce qui utilisera la traduction */}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

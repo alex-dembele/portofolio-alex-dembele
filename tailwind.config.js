@@ -1,3 +1,4 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 const { fontFamily } = require('tailwindcss/defaultTheme')
 
@@ -11,6 +12,14 @@ module.exports = {
         fontFamily: {
             sans: ['"Space Grotesk"', ...fontFamily.sans],
         },
+        // ↓↓↓ Ajoutez ce bloc de couleurs ↓↓↓
+        colors: {
+            'text-primary': 'rgb(var(--text-primary))',
+            'text-secondary': 'rgb(var(--text-secondary))',
+            'accent': 'rgb(var(--text-accent))',
+            'border-color': 'var(--border-color)',
+            'card-bg': 'var(--card-bg)',
+        }
     },
   },
   plugins: [],
