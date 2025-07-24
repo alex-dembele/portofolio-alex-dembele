@@ -26,12 +26,14 @@ export default function Home() {
     const activeContent = tabs.find((tab) => tab.id === activeTab)?.component;
 
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+        <div className="flex flex-& flex-grow-1 bg-r" >
+            <div>
+                <main className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
             <div className="w-full max-w-5xl mx-auto">
                 {/* --- Section Entête / Profil --- */}
                 <div className="flex flex-col items-center mb-8 text-center">
-                    [cite_start]<h1 className="text-4xl font-bold text-white">ALEXANDRE DEMBELE [cite: 1]</h1>
-                    <p className="text-lg text-gray-300">Ingénieur Systèmes & Réseaux | Cloud & DevOps | [cite_start]Cybersécurité [cite: 2]</p>
+                    <h1 className="text-4xl font-bold text-white">ALEXANDRE DEMBELE</h1>
+                    <p className="text-lg text-gray-300">Ingénieur Systèmes & Réseaux | Cloud & DevOps | Cybersécurité </p>
                 </div>
 
                 {/* --- Section Navigation par Onglets --- */}
@@ -79,5 +81,7 @@ export default function Home() {
                 </div>
             </div>
         </main>
+            </div>
+        </div>
     );
 }
