@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Home as HomeIcon, Briefcase, Code, Award, User } from "lucide-react";
+import { Home as HomeIcon, Briefcase, Code, Award } from "lucide-react";
 
-// Étape 3 : Import du premier onglet fonctionnel
+// Import des composants d'onglets que nous avons finalisés
 import HomeTab from "./components/tabs/HomeTab";
+import ExperienceTab from "./components/tabs/ExperienceTab";
+import ProjectsTab from "./components/tabs/ProjectsTab";
 
-// Composant temporaire pour les onglets que nous n'avons pas encore créés.
-// Cela permet à l'application de fonctionner sans erreurs.
+// Composant temporaire pour le dernier onglet
 const PlaceholderTab = ({ tabName }: { tabName: string }) => (
     <div className="flex items-center justify-center h-96">
         <p className="text-gray-400 text-lg">Le contenu de l'onglet "{tabName}" sera ajouté à la prochaine étape.</p>
@@ -17,12 +18,11 @@ const PlaceholderTab = ({ tabName }: { tabName: string }) => (
 
 
 export default function Home() {
-    // Définition des onglets. Au fur et à mesure que nous créerons les composants,
-    // nous remplacerons les 'PlaceholderTab'.
+    // Le tableau des onglets, maintenant à jour avec le composant ProjectsTab
     const tabs = [
         { id: "home", label: "Accueil", icon: HomeIcon, component: <HomeTab /> },
-        { id: "experience", label: "Expérience", icon: Briefcase, component: <PlaceholderTab tabName="Expérience" /> },
-        { id: "projects", label: "Projets", icon: Code, component: <PlaceholderTab tabName="Projets" /> },
+        { id: "experience", label: "Expérience", icon: Briefcase, component: <ExperienceTab /> },
+        { id: "projects", label: "Projets", icon: Code, component: <ProjectsTab /> },
         { id: "certifications", label: "Certifications", icon: Award, component: <PlaceholderTab tabName="Certifications" /> },
     ];
 
@@ -47,6 +47,7 @@ export default function Home() {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
+                                // ↓↓↓ Ligne corrigée ↓↓↓
                                 className={`${activeTab === tab.id ? "" : "hover:text-white/60"} relative rounded-full px-4 py-2 text-sm md:text-base font-medium text-white transition focus-visible:outline-2`}
                                 style={{ WebkitTapHighlightColor: "transparent" }}
                             >
