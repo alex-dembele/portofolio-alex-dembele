@@ -1,103 +1,62 @@
-import Image from "next/image";
+// src/app/page.tsx
+"use client";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Home as HomeIcon, Briefcase, Code, Award, User } from "lucide-react";
+// Nous créerons ces composants d'onglet dans les prochaines étapes
+// import HomeTab from "./components/tabs/HomeTab"; 
+// import ExperienceTab from "./components/tabs/ExperienceTab";
+// etc.
+
+const tabs = [
+  { id: "home", label: "Accueil", icon: HomeIcon },
+  { id: "experience", label: "Expérience", icon: Briefcase },
+  { id: "projects", label: "Projets", icon: Code },
+  { id: "certifications", label: "Certifications", icon: Award },
+];
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+      <div className="w-full max-w-5xl mx-auto">
+        <div className="flex flex-col items-center mb-8 text-center">
+            <h1 className="text-4xl font-bold text-white">ALEXANDRE DEMBELE</h1>
+            <p className="text-lg text-gray-300">Ingénieur Systèmes & Réseaux | Cloud & DevOps | Cybersécurité</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="flex justify-center mb-8">
+            <div className="flex space-x-2 p-2 bg-black/20 rounded-full border border-white/10 backdrop-blur-sm">
+              {tabs.map((tab) => (
+                <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                  className={`${activeTab === tab.id ? "" : "hover:text-white/60"} relative rounded-full px-4 py-2 text-sm md:text-base font-medium text-white transition focus-visible:outline-2`}
+                >
+                  {activeTab === tab.id && (
+                    <motion.span layoutId="bubble"
+                      className="absolute inset-0 z-10 bg-white/10 border border-white/20"
+                      style={{ borderRadius: 9999 }}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                  <span className="relative z-20 flex items-center gap-2"><tab.icon size={16}/> {tab.label}</span>
+                </button>
+              ))}
+            </div>
+        </div>
+
+        <div className="group relative w-full min-h-[400px] p-6 md:p-8 bg-black/30 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl">
+            <div className="absolute -inset-px bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-70 transition duration-500" style={{ filter: 'blur(15px)' }}></div>
+            <div className="relative">
+              {/* Le contenu des onglets sera affiché ici */}
+              <AnimatePresence mode="wait">
+                <motion.div key={activeTab} initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -10, opacity: 0 }} transition={{ duration: 0.3 }}>
+                  <h2 className="text-white">Contenu de l'onglet : {activeTab}</h2>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+        </div>
+      </div>
+    </main>
   );
 }
