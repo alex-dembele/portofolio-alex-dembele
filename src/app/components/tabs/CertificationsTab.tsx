@@ -36,11 +36,8 @@ const certifications = [
 export default function CertificationsTab() {
     return (
         <div>
-            <h2 className="text-3xl font-bold text-green-400 mb-8 text-center">Certifications & Diplômes</h2>
-             <div className="p-4 mb-8 text-center bg-yellow-900/50 border border-yellow-700 rounded-lg">
-                <p className="font-bold text-yellow-300">⚠️ Important</p>
-                <p className="text-sm text-yellow-400/80">N'oubliez pas d'ajouter les logos dans `public/logos` et de remplacer les liens `url: '#'` par vos liens de vérification réels.</p>
-            </div>
+            <h2 className="text-3xl font-bold text-green-400 mb-8 text-center">Certifications</h2>
+             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {certifications.map(cert => (
                     <a 

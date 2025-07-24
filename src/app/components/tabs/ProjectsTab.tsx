@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Badge } from "@/app/components/ui/Badge"; // Nous allons créer ce fichier
-import { Star, Loader, AlertTriangle, ExternalLink, Github } from "lucide-react";
+import { Loader, AlertTriangle, ExternalLink, Github } from "lucide-react";
 
 export interface GitHubProject {
     id: number;
@@ -23,7 +23,7 @@ export default function ProjectsTab() {
     useEffect(() => {
         async function fetchProjects() {
             try {
-                const res = await fetch(`https://api.github.com/users/alex-dembele/repos?sort=updated&per_page=6`);
+                const res = await fetch(`https://api.github.com/users/alex-dembele/repos?sort=updated&per_page=100`);
                 if (!res.ok) {
                     throw new Error(`Erreur API GitHub: ${res.status}. Vérifiez votre nom d'utilisateur.`);
                 }
