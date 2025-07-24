@@ -4,26 +4,20 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Home as HomeIcon, Briefcase, Code, Award } from "lucide-react";
 
-// Import des composants d'onglets que nous avons finalisés
+// Import de tous les composants d'onglets finalisés
 import HomeTab from "./components/tabs/HomeTab";
 import ExperienceTab from "./components/tabs/ExperienceTab";
 import ProjectsTab from "./components/tabs/ProjectsTab";
-
-// Composant temporaire pour le dernier onglet
-const PlaceholderTab = ({ tabName }: { tabName: string }) => (
-    <div className="flex items-center justify-center h-96">
-        <p className="text-gray-400 text-lg">Le contenu de l'onglet "{tabName}" sera ajouté à la prochaine étape.</p>
-    </div>
-);
+import CertificationsTab from "./components/tabs/CertificationsTab";
 
 
 export default function Home() {
-    // Le tableau des onglets, maintenant à jour avec le composant ProjectsTab
+    // Le tableau final des onglets avec tous les composants réels
     const tabs = [
         { id: "home", label: "Accueil", icon: HomeIcon, component: <HomeTab /> },
         { id: "experience", label: "Expérience", icon: Briefcase, component: <ExperienceTab /> },
         { id: "projects", label: "Projets", icon: Code, component: <ProjectsTab /> },
-        { id: "certifications", label: "Certifications", icon: Award, component: <PlaceholderTab tabName="Certifications" /> },
+        { id: "certifications", label: "Certifications", icon: Award, component: <CertificationsTab /> },
     ];
 
     const [activeTab, setActiveTab] = useState(tabs[0].id);
@@ -36,8 +30,8 @@ export default function Home() {
             <div className="w-full max-w-5xl mx-auto">
                 {/* --- Section Entête / Profil --- */}
                 <div className="flex flex-col items-center mb-8 text-center">
-                    <h1 className="text-4xl font-bold text-white">ALEXANDRE DEMBELE</h1>
-                    <p className="text-lg text-gray-300">Ingénieur Systèmes & Réseaux | Cloud & DevOps | Cybersécurité</p>
+                    [cite_start]<h1 className="text-4xl font-bold text-white">ALEXANDRE DEMBELE [cite: 1]</h1>
+                    <p className="text-lg text-gray-300">Ingénieur Systèmes & Réseaux | Cloud & DevOps | [cite_start]Cybersécurité [cite: 2]</p>
                 </div>
 
                 {/* --- Section Navigation par Onglets --- */}
@@ -47,7 +41,6 @@ export default function Home() {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                // ↓↓↓ Ligne corrigée ↓↓↓
                                 className={`${activeTab === tab.id ? "" : "hover:text-white/60"} relative rounded-full px-4 py-2 text-sm md:text-base font-medium text-white transition focus-visible:outline-2`}
                                 style={{ WebkitTapHighlightColor: "transparent" }}
                             >
