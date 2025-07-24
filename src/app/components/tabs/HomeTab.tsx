@@ -13,7 +13,7 @@ export default function HomeTab() {
                 <div>
                     <h3 className="text-xl font-bold text-green-400 mb-2">RÉSUMÉ PROFESSIONNEL</h3>
                     <p className="text-gray-300 leading-relaxed text-sm">
-                        [cite_start]Administrateur Système & Réseau avec plusieurs années d'expérience dans l'optimisation et la sécurisation d'infrastructures cloud. Spécialisé en automatisation et orchestration avec des technologies telles que AWS, Kubernetes, et Docker, je possède une expertise solide en DevOps et cybersécurité. Axé sur la performance et la résilience, je conçois des solutions innovantes garantissant la haute disponibilité et l'efficacité des systèmes. Ouvert à la mobilité internationale et intéressé par des opportunités au Canada. [cite: 5, 6, 7, 8]
+                        Administrateur Système & Réseau avec plusieurs années d'expérience dans l'optimisation et la sécurisation d'infrastructures cloud. Spécialisé en automatisation et orchestration avec des technologies telles que AWS, Kubernetes, et Docker, je possède une expertise solide en DevOps et cybersécurité. Axé sur la performance et la résilience, je conçois des solutions innovantes garantissant la haute disponibilité et l'efficacité des systèmes.
                     </p>
                 </div>
             </BentoCard>
@@ -22,7 +22,7 @@ export default function HomeTab() {
                     <Cloud className="w-8 h-8 text-green-400"/>
                     <div>
                         <h3 className="font-bold text-lg">Cloud & Infrastructure</h3>
-                        [cite_start]<p className="text-sm text-gray-400">AWS, Kubernetes, Docker, OpenStack, Azure, Google Cloud [cite: 29]</p>
+                        <p className="text-sm text-gray-400">AWS, Kubernetes, Docker, OpenStack, Azure, Google Cloud </p>
                     </div>
                 </div>
             </BentoCard>
@@ -31,7 +31,7 @@ export default function HomeTab() {
                     <Lock className="w-8 h-8 text-green-400"/>
                     <div>
                        <h3 className="font-bold text-lg">Sécurité & Réseau</h3>
-                       [cite_start]<p className="text-sm text-gray-400">VPN IPSec, IAM, Threat Intelligence, Cisco, pfSense [cite: 33]</p>
+                       <p className="text-sm text-gray-400">VPN IPSec, IAM, Threat Intelligence, Cisco, pfSense</p>
                     </div>
                 </div>
             </BentoCard>
@@ -40,7 +40,7 @@ export default function HomeTab() {
                     <Zap className="w-8 h-8 text-green-400"/>
                     <div>
                        <h3 className="font-bold text-lg">DevOps & Automatisation</h3>
-                       [cite_start]<p className="text-sm text-gray-400">Terraform, Helm, ArgoCD, CI/CD, GitHub Actions [cite: 31]</p>
+                       <p className="text-sm text-gray-400">Terraform, Helm, ArgoCD, CI/CD, GitHub Actions</p>
                     </div>
                 </div>
             </BentoCard>

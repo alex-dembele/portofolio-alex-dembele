@@ -26,24 +26,22 @@ export default function Home() {
     const activeContent = tabs.find((tab) => tab.id === activeTab)?.component;
 
     return (
-        <div className="flex flex-& flex-grow-1 bg-r" >
-            <div>
-                <main className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+        <main className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
             <div className="w-full max-w-5xl mx-auto">
                 {/* --- Section Entête / Profil --- */}
                 <div className="flex flex-col items-center mb-8 text-center">
-                    <h1 className="text-4xl font-bold text-white">ALEXANDRE DEMBELE</h1>
-                    <p className="text-lg text-gray-300">Ingénieur Systèmes & Réseaux | Cloud & DevOps | Cybersécurité </p>
+                    <h1 className="text-3xl md:text-4xl font-bold text-white">ALEXANDRE DEMBELE</h1>
+                    <p className="text-base md:text-lg text-gray-300 mt-1">Ingénieur Systèmes & Réseaux | Cloud & DevOps | Cybersécurité</p>
                 </div>
 
-                {/* --- Section Navigation par Onglets --- */}
+                {/* --- Section Navigation par Onglets (Responsive) --- */}
                 <div className="flex justify-center mb-8">
-                    <div className="flex space-x-2 p-2 bg-black/20 rounded-full border border-white/10 backdrop-blur-sm">
+                    <div className="flex space-x-1 sm:space-x-2 p-2 bg-black/20 rounded-full border border-white/10 backdrop-blur-sm">
                         {tabs.map((tab) => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`${activeTab === tab.id ? "" : "hover:text-white/60"} relative rounded-full px-4 py-2 text-sm md:text-base font-medium text-white transition focus-visible:outline-2`}
+                                className={`${activeTab === tab.id ? "" : "hover:text-white/60"} relative rounded-full px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-base font-medium text-white transition focus-visible:outline-2`}
                                 style={{ WebkitTapHighlightColor: "transparent" }}
                             >
                                 {activeTab === tab.id && (
@@ -55,15 +53,17 @@ export default function Home() {
                                     />
                                 )}
                                 <span className="relative z-20 flex items-center gap-2">
-                                    <tab.icon size={16}/> {tab.label}
+                                    <tab.icon size={16}/>
+                                    {/* Le label est masqué sur les très petits écrans pour gagner de la place */}
+                                    <span className="hidden sm:inline">{tab.label}</span>
                                 </span>
                             </button>
                         ))}
                     </div>
                 </div>
 
-                {/* --- Section Contenu de l'Onglet --- */}
-                <div className="group relative w-full min-h-[400px] p-6 md:p-8 bg-black/30 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl">
+                {/* --- Section Contenu de l'Onglet (Responsive) --- */}
+                <div className="group relative w-full min-h-[400px] p-4 md:p-8 bg-black/30 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl">
                     <div className="absolute -inset-px bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-70 transition duration-500" style={{ filter: 'blur(15px)' }}></div>
                     <div className="relative">
                         <AnimatePresence mode="wait">
@@ -81,7 +81,5 @@ export default function Home() {
                 </div>
             </div>
         </main>
-            </div>
-        </div>
     );
 }
