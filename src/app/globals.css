@@ -2,27 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-        to bottom,
-        rgb(var(--background-start-rgb)),
-        rgb(var(--background-end-rgb))
-      );
+    background: rgb(var(--background-rgb));
     min-height: 100vh;
   }
+  
+  /* --- Thème Sombre (par défaut) --- */
   :root, .dark {
-    --background-start-rgb: 2, 6, 23;
-    --background-end-rgb: 4, 12, 44;
+    --background-rgb: 2, 6, 23;
     --foreground-rgb: 229, 231, 235;
     --border-color: rgba(255, 255, 255, 0.1);
-    --primary-glow: 34, 197, 94;
-    --secondary-glow: 37, 99, 235;
+    --card-bg: rgba(17, 24, 39, 0.4);
+    --primary-glow: 34, 197, 94;  /* Vert */
+    --secondary-glow: 37, 99, 235;    /* Bleu */
+  }
+
+  /* --- Thème Clair --- */
+  .light {
+    --background-rgb: 243, 244, 246; /* Gris très clair */
+    --foreground-rgb: 17, 24, 39; /* Gris foncé */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.4);
+    --primary-glow: 34, 197, 94; /* Vert */
+    --secondary-glow: 37, 99, 235; /* Bleu */
   }
 }
 
+/* --- Animation de l'Aurore (fonctionne sur les deux thèmes) --- */
 .aurora-background {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   z-index: -1; opacity: 0.3; filter: blur(40px);

@@ -9,6 +9,7 @@ import HomeTab from "./components/tabs/HomeTab";
 import ExperienceTab from "./components/tabs/ExperienceTab";
 import ProjectsTab from "./components/tabs/ProjectsTab";
 import CertificationsTab from "./components/tabs/CertificationsTab";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 
 export default function Home() {
@@ -27,6 +28,11 @@ export default function Home() {
 
     return (
         <main className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+            {/* --- Bouton de Thème --- */}
+            <div className="absolute top-5 right-5 z-50">
+                <ThemeToggle />
+            </div>
+
             <div className="w-full max-w-5xl mx-auto">
                 {/* --- Section Entête / Profil --- */}
                 <div className="flex flex-col items-center mb-8 text-center">
