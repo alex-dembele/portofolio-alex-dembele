@@ -4,19 +4,12 @@ import Image from 'next/image';
 const certifications = [
     // Cloud
     { name: 'Google Cloud Certified Associate Cloud Engineer', issuer: 'Google Cloud', logo: '/logos/google-cloud.svg', url: '#' },
-    { name: 'Build Infrastructure with Terraform', issuer: 'Google Cloud Skills Boost', logo: '/logos/google-cloud.svg', url: '#' },
-    { name: 'Build a Secure Google Cloud Network', issuer: 'Google Cloud Skills Boost', logo: '/logos/google-cloud.svg', url: '#' },
-    { name: 'Implement Cloud Security Fundamentals', issuer: 'Google Cloud Skills Boost', logo: '/logos/google-cloud.svg', url: '#' },
-    { name: 'Set Up an App Dev Environment', issuer: 'Google Cloud Skills Boost', logo: '/logos/google-cloud.svg', url: '#' },
-
+ 
     // Sécurité
     { name: 'Ethical Hacker', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
     { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', logo: '/logos/skillfront.svg', url: '#' },
-    { name: 'Cybersecurity Fundamentals', issuer: 'IBM SkillsBuild', logo: '/logos/ibm.svg', url: '#' },
-    { name: 'Cyber Threat Management', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
+    { name: 'Cyber Threat Intelligence Analyst', issuer: 'arcX', logo: '/logos/arcx.svg', url: '#' },
     { name: 'Fortinet Certified Associate', issuer: 'Fortinet', logo: '/logos/fortinet.svg', url: '#' },
-    { name: 'Endpoint Security', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
-    { name: 'Introduction to Cybersecurity', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
     { name: 'CrowdSec Driven Cybersecurity Certificate', issuer: 'CrowdSec', logo: '/logos/crowdsec.svg', url: '#' },
 
     // DevOps & Automatisation
@@ -24,9 +17,6 @@ const certifications = [
     { name: 'Certified Associate In Scrum Fundamentals (CASF)', issuer: 'SkillFront', logo: '/logos/skillfront.svg', url: '#' },
 
     // Réseau
-    { name: 'Network Addressing and Basic Troubleshooting', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
-    { name: 'Network Defense', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
-    { name: 'Network Support and Security', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
     { name: 'Network Technician Career Path', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
 
     // Autres

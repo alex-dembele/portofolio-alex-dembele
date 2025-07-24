@@ -15,7 +15,7 @@ export default function HomeTab() {
                     <h3 className="text-lg md:text-xl font-bold text-green-400 mb-2">RÉSUMÉ PROFESSIONNEL</h3>
                     {/* Les apostrophes ont été remplacées par &apos; */}
                     <p className="text-gray-300 leading-relaxed text-sm">
-                        Administrateur Système & Réseau avec plusieurs années d&apos;expérience dans l&apos;optimisation et la sécurisation d&apos;infrastructures cloud. Spécialisé en automatisation et orchestration avec des technologies telles que AWS, Kubernetes, et Docker, je possède une expertise solide en DevOps et cybersécurité. Axé sur la performance et la résilience, je conçois des solutions innovantes garantissant la haute disponibilité et l&apos;efficacité des systèmes.
+                        Ingénieur Cloud & DevOps expert en automatisation (AWS, Kubernetes, Docker) et cybersécurité. Je bâtis des infrastructures performantes, résilientes et hautement disponibles pour optimiser et sécuriser les systèmes
                     </p>
                 </div>
             </BentoCard>
