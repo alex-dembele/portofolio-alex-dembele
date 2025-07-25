@@ -1,69 +1,85 @@
-// src/app/components/tabs/HomeTab.tsx (Corrigé)
-import { Cloud, Database, Github, Lock, Monitor, Pin, Zap } from "lucide-react"; // "Briefcase" a été retiré
+"use client";
+import Image from 'next/image';
+import { Download, Cloud, Lock, Zap } from 'lucide-react';
+import { FaLinkedin, FaMedium, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
-const BentoCard = ({ children, className }: { children: React.ReactNode, className?: string }) => (
-    <div className={`bg-black/20 p-4 md:p-6 rounded-xl border border-white/10 flex flex-col justify-between group hover:border-green-400/50 transition-colors ${className}`}>
-        {children}
-    </div>
-);
+// --- Données pour les liens et compétences ---
+const socialLinks = [
+    { icon: MdEmail, url: 'mailto:alexandredembele16@gmail.com', name: 'Email' },
+    { icon: FaLinkedin, url: 'https://linkedin.com/in/alexandre-dembele-b80a01225', name: 'LinkedIn' },
+    { icon: FaMedium, url: '#', name: 'Medium' },
+    { icon: FaTwitter, url: '#', name: 'Twitter (X)' },
+    { icon: FaInstagram, url: '#', name: 'Instagram' },
+    { icon: FaFacebook, url: '#', name: 'Facebook' },
+];
+
+const skillCategories = [
+    { 
+        icon: Cloud, 
+        title: "Cloud & Infrastructure", 
+        skills: ["AWS", "Kubernetes", "Docker", "OpenStack", "Azure", "Google Cloud"] 
+    },
+    { 
+        icon: Zap, 
+        title: "DevOps & Automatisation", 
+        skills: ["Terraform", "Helm", "ArgoCD", "CI/CD", "GitHub Actions", "Bash Scripting"] 
+    },
+    { 
+        icon: Lock, 
+        title: "Sécurité & Réseau", 
+        skills: ["VPN IPSec", "IAM", "Threat Intelligence", "Cisco", "pfSense", "LAN/WAN"] 
+    },
+];
 
 export default function HomeTab() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[220px]">
-            <BentoCard className="md:col-span-2">
-                <div>
-                    <h3 className="text-lg md:text-xl font-bold text-green-400 mb-2">SUMMARY</h3>
-                    {/* Les apostrophes ont été remplacées par &apos; */}
-                    <p className="text-secondary leading-relaxed text-sm">
-                        Ingénieur Cloud & DevOps expert en automatisation (AWS, Kubernetes, Docker) et cybersécurité. Je bâtis des infrastructures performantes, résilientes et hautement disponibles pour optimiser et sécuriser les systèmes
-                    </p>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
+            
+            {/* --- Colonne de Gauche : "About Me" & Contact --- */}
+            <div className="lg:col-span-2 space-y-6">
+                
+                {/* Le bloc de la photo de profil a été retiré ici */}
+                
+                <h2 className="text-3xl font-bold text-accent">À Propos de Moi</h2>
+                <p className="text-secondary leading-relaxed">
+                    Ingénieur Cloud & DevOps passionné par l'automatisation et la sécurisation des infrastructures. Je transforme des défis complexes en systèmes performants et résilients, en m'appuyant sur une expertise solide avec des outils comme AWS, Kubernetes et Docker.
+                </p>
+
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    {socialLinks.map(link => (
+                        <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer" aria-label={link.name}
+                           className="text-secondary hover:text-primary transition-colors">
+                            <link.icon size={24} />
+                        </a>
+                    ))}
                 </div>
-            </BentoCard>
-            <BentoCard>
-                <div className="h-full flex flex-col justify-between">
-                    <Cloud className="w-8 h-8 text-green-400"/>
-                    <div>
-                        <h3 className="font-bold text-base md:text-lg">Cloud & Infrastructure</h3>
-                        <p className="text-sm text-secondary">AWS, Kubernetes, Docker, OpenStack, Azure, Google Cloud</p>
-                    </div>
-                </div>
-            </BentoCard>
-            <BentoCard>
-                 <div className="h-full flex flex-col justify-between">
-                    <Lock className="w-8 h-8 text-green-400"/>
-                    <div>
-                       <h3 className="font-bold text-base md:text-lg">Security & Networking</h3>
-                       <p className="text-sm text-secondary">VPN IPSec, IAM, Threat Intelligence, Cisco, pfSense</p>
-                    </div>
-                </div>
-            </BentoCard>
-            <BentoCard>
-                <div className="h-full flex flex-col justify-between">
-                    <Zap className="w-8 h-8 text-green-400"/>
-                    <div>
-                       <h3 className="font-bold text-base md:text-lg">DevOps & Automatisation</h3>
-                       <p className="text-sm text-secondary">Terraform, Helm, ArgoCD, CI/CD, GitHub Actions, Bash Scripting </p>
-                    </div>
-                </div>
-            </BentoCard>
-            <BentoCard>
-                <div className="h-full flex flex-col justify-between">
-                    <Monitor className="w-8 h-8 text-green-400"/>
-                    <div>
-                       <h3 className="font-bold text-base md:text-lg">Monitoring & Optimization</h3>
-                       <p className="text-sm text-secondary">Prometheus, Grafana, Cloud Cost Management </p>
-                    </div>
-                </div>
-            </BentoCard>
-            <BentoCard>
-                <a href="https://github.com/alex-dembele" target="_blank" rel="noopener noreferrer" className="h-full flex flex-col justify-between group">
-                    <Github className="w-8 h-8 text-green-400 transition-transform group-hover:scale-110"/>
-                    <div>
-                        <h3 className="font-bold text-base md:text-lg">Code & Projects</h3>
-                        <p className="text-sm text-green-400 group-hover:underline">My contributions →</p>
-                    </div>
+
+                <a href="/CV_Alexandre_Dembele.pdf" download
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 text-accent font-semibold rounded-full border border-accent/30 hover:bg-accent/20 transition-colors">
+                    <Download size={18} />
+                    Télécharger mon CV
                 </a>
-            </BentoCard>
+            </div>
+
+            {/* --- Colonne de Droite : Compétences --- */}
+            <div className="lg:col-span-3 space-y-6">
+                <h2 className="text-3xl font-bold text-accent">Mes Compétences</h2>
+                {skillCategories.map(category => (
+                    <div key={category.title} className="p-6 bg-card-bg border border-border-color rounded-xl">
+                        <div className="flex items-center gap-3 mb-4">
+                           <category.icon className="w-6 h-6 text-accent" />
+                           <h3 className="text-lg font-bold text-primary">{category.title}</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                           {category.skills.map(skill => (
+                               <span key={skill} className="px-3 py-1 text-sm bg-gray-700/50 text-gray-300 border border-gray-600 rounded-full">{skill}</span>
+                           ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
         </div>
-    )
+    );
 }
