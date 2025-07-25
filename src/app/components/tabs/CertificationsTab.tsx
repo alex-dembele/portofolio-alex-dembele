@@ -13,9 +13,12 @@ const certifications = [
     { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', logo: '/logos/skillfront.svg', url: '#' },
     { name: 'Cybersecurity Fundamentals', issuer: 'IBM SkillsBuild', logo: '/logos/ibm.svg', url: '#' },
     { name: 'Fortinet Certified Associate', issuer: 'Fortinet', logo: '/logos/fortinet.svg', url: '#' },
-    { name: 'Introduction to Kubernetes LFS158', issuer: 'The Linux Foundation', logo: '/logos/linux-foundation.svg', url: '#' },
+    { name: 'Introduction to Kubernetes LFS158', issuer: 'The Linux Foundation', logo: '/logos/linux-foundation.svg', url: 'https://www.credly.com/badges/1255106a-efbf-446e-bcd4-43b68b7a8540/public_url' },
     { name: 'CrowdSec Driven Cybersecurity Certificate', issuer: 'CrowdSec', logo: '/logos/crowdsec.svg', url: '#' },
-    { name: 'Network Technician Career Path', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
+    { name: 'CrowdSec Threat Intelligence certificate', issuer: 'CrowdSec', logo: '/logos/crowdsec.svg', url: 'https://mycourse.app/pkxOQWQe64w8DaWVQ' },
+    { name: 'CTI Level Threat intelligence Analyst Certificate', issuer: 'arcX', logo: '/logos/arcx.svg', url: 'https://arcx.io/verify-certificate?id=57c66840dc18ac10768a1626185615127222065a&k=e52ae2e391e84596b27427863b951eab' },
+
+    { name: 'Network Technician Career Path', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: 'https://www.credly.com/earner/earned/badge/8e2ee3bf-7de6-419b-9e06-faf45cbc3654' },
     { name: 'The Complete MySQL Bootcamp', issuer: 'Udemy', logo: '/logos/udemy.svg', url: '#' },
 ];
 
