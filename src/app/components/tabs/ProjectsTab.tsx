@@ -82,7 +82,7 @@ export default function ProjectsTab() {
                     </div>
                     <div>
                         <h4 className="font-bold text-primary mb-2">Technologies :</h4>
-                        <div className="flex flex-wrap gap-4 items-center">{selectedProject.techStack.map(tech => (<div key={tech} className="flex items-center justify-center p-2 bg-gray-700/30 rounded-full" title={tech}><Image src={`/logos/${tech}.png`} alt={`Logo ${tech}`} width={24} height={24} className="object-contain" /></div>))}</div>
+                        <div className="flex flex-wrap gap-4 items-center">{selectedProject.techStack.map(tech => (<div key={tech} className="flex items-center justify-center p-2 bg-gray-700/30 rounded-full" title={tech}><Image src={`/logos/${tech}.svg`} alt={`Logo ${tech}`} width={24} height={24} className="object-contain" /></div>))}</div>
                     </div>
                     <div className="flex items-center gap-6 mt-6 pt-4 border-t border-border-color">
                         <a href={selectedProject.html_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-primary transition font-semibold"><Github size={18}/> Voir le Code</a>
