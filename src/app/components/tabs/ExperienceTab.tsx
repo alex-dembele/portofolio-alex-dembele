@@ -36,7 +36,7 @@ const experiences = [
         role: "Network Administrator Intern",
         company: "SAUNYA Cosmetics Sarl",
         location: "Douala, Cameroon",
-        logo: "/logos/saunya.svg", 
+        logo: "/logos/saunya.png", 
         date: "November 2020 - October 2021",
         tasks: [
             "Deployed a private OpenStack cloud.",

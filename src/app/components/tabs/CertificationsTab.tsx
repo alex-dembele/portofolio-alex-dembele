@@ -8,18 +8,18 @@ import { ExternalLink } from 'lucide-react';
 
 // Le tableau des certifications avec la syntaxe corrigée
 const certifications = [
-    { name: 'Google Cloud Certified Associate Cloud Engineer', issuer: 'Google Cloud', logo: '/logos/google-cloud.svg', url: '#' },
-    { name: 'Ethical Hacker', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
-    { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', logo: '/logos/skillfront.svg', url: '#' },
-    { name: 'Cybersecurity Fundamentals', issuer: 'IBM SkillsBuild', logo: '/logos/ibm.svg', url: '#' },
-    { name: 'Fortinet Certified Associate', issuer: 'Fortinet', logo: '/logos/fortinet.svg', url: '#' },
+    { name: 'Google Cloud Certified Associate Cloud Engineer', issuer: 'Google Cloud', logo: '/logos/google-cloud.svg', url: 'https://www.credly.com/badges/8edc48d4-62f8-4a5e-afc2-664bac2a7623/public_url' },
+    { name: 'Ethical Hacker', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: 'https://www.credly.com/badges/2dad3f6a-b747-4f97-b5ad-04742e89f991/public_url' },
+    { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', logo: '/logos/skillfront.svg', url: 'https://www.skillfront.com/Badges/08130013406379' },
+    { name: 'Certified Associate In Scrum Fundamentals (CASF)', issuer: 'SkillFront', logo: '/logos/skillfront.svg', url: 'https://www.skillfront.com/Badges/79639064273882' },
+    { name: 'Cybersecurity Fundamentals', issuer: 'IBM SkillsBuild', logo: '/logos/ibm.svg', url: 'https://www.credly.com/earner/earned/badge/85490e33-5538-4f25-ac25-4f1c8962d6dd' },
+    { name: 'Fortinet Certified Associate', issuer: 'Fortinet', logo: '/logos/fortinet.svg', url: 'https://credly.com/badges/341c49e1-ee50-4198-9add-7d58af3c1032' },
     { name: 'Introduction to Kubernetes LFS158', issuer: 'The Linux Foundation', logo: '/logos/linux-foundation.svg', url: 'https://www.credly.com/badges/1255106a-efbf-446e-bcd4-43b68b7a8540/public_url' },
-    { name: 'CrowdSec Driven Cybersecurity Certificate', issuer: 'CrowdSec', logo: '/logos/crowdsec.svg', url: '#' },
+    { name: 'CrowdSec Driven Cybersecurity Certificate', issuer: 'CrowdSec', logo: '/logos/crowdsec.svg', url: 'https://mycourse.app/CBjeBDzU0EJN9HTLX' },
     { name: 'CrowdSec Threat Intelligence certificate', issuer: 'CrowdSec', logo: '/logos/crowdsec.svg', url: 'https://mycourse.app/pkxOQWQe64w8DaWVQ' },
-    { name: 'CTI Level Threat intelligence Analyst Certificate', issuer: 'arcX', logo: '/logos/arcx.svg', url: 'https://arcx.io/verify-certificate?id=57c66840dc18ac10768a1626185615127222065a&k=e52ae2e391e84596b27427863b951eab' },
+    { name: 'CTI Level Threat intelligence Analyst Certificate', issuer: 'arcX', logo: '/logos/arcx.webp', url: 'https://arcx.io/verify-certificate?id=57c66840dc18ac10768a1626185615127222065a&k=e52ae2e391e84596b27427863b951eab' },
 
     { name: 'Network Technician Career Path', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: 'https://www.credly.com/earner/earned/badge/8e2ee3bf-7de6-419b-9e06-faf45cbc3654' },
-    { name: 'The Complete MySQL Bootcamp', issuer: 'Udemy', logo: '/logos/udemy.svg', url: '#' },
 ];
 
 type Certification = typeof certifications[0];
