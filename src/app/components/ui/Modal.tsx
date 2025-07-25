@@ -1,4 +1,3 @@
-// src/app/components/ui/Modal.tsx (Version Corrigée)
 "use client";
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
@@ -38,8 +37,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            {/* ↓↓↓ LA CORRECTION EST ICI ↓↓↓ */}
-                            <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-card-bg border border-border-color p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="w-full max-w-3xl transform overflow-hidden rounded-2xl bg-modal-bg border border-border-color p-6 text-left align-middle shadow-xl transition-all">
                                 <button onClick={onClose} className="absolute top-4 right-4 text-secondary hover:text-primary">
                                     <X size={24} />
                                 </button>

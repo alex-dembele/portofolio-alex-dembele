@@ -19,8 +19,11 @@ module.exports = {
             'accent': 'rgb(var(--text-accent))',
             'border-color': 'var(--border-color)',
             'card-bg': 'var(--card-bg)',
+            'modal-bg': 'var(--modal-bg)',
         }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 };
