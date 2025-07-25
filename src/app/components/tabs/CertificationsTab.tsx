@@ -9,16 +9,12 @@ import { ExternalLink } from 'lucide-react';
 // Le tableau des certifications avec la syntaxe corrigée
 const certifications = [
     { name: 'Google Cloud Certified Associate Cloud Engineer', issuer: 'Google Cloud', logo: '/logos/google-cloud.svg', url: '#' },
-    { name: 'Build Infrastructure with Terraform', issuer: 'Google Cloud Skills Boost', logo: '/logos/google-cloud.svg', url: '#' },
     { name: 'Ethical Hacker', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
     { name: 'ISO/IEC 27001 Information Security Associate', issuer: 'SkillFront', logo: '/logos/skillfront.svg', url: '#' },
     { name: 'Cybersecurity Fundamentals', issuer: 'IBM SkillsBuild', logo: '/logos/ibm.svg', url: '#' },
     { name: 'Fortinet Certified Associate', issuer: 'Fortinet', logo: '/logos/fortinet.svg', url: '#' },
     { name: 'Introduction to Kubernetes LFS158', issuer: 'The Linux Foundation', logo: '/logos/linux-foundation.svg', url: '#' },
     { name: 'CrowdSec Driven Cybersecurity Certificate', issuer: 'CrowdSec', logo: '/logos/crowdsec.svg', url: '#' },
-    { name: 'Network Addressing and Basic Troubleshooting', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
-    { name: 'Network Defense', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
-    { name: 'Network Support and Security', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
     { name: 'Network Technician Career Path', issuer: 'Cisco Networking Academy', logo: '/logos/cisco.svg', url: '#' },
     { name: 'The Complete MySQL Bootcamp', issuer: 'Udemy', logo: '/logos/udemy.svg', url: '#' },
 ];
@@ -37,11 +33,7 @@ export default function CertificationsTab() {
     return (
         <>
             <div>
-                <h2 className="text-3xl font-bold text-accent mb-8 text-center">Certifications & Diplômes</h2>
-                <div className="p-4 mb-8 text-center bg-yellow-900/50 border border-yellow-700 rounded-lg">
-                    <p className="font-bold text-yellow-300">⚠️ Important</p>
-                    <p className="text-sm text-yellow-400/80">N&apos;oubliez pas de remplacer les liens `url: &apos;#&apos;` par vos liens de vérification réels.</p>
-                </div>
+                <h2 className="text-3xl font-bold text-accent mb-8 text-center">Certifications & Badges</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {certifications.map((cert, index) => (
                         <motion.div 
@@ -83,7 +75,7 @@ export default function CertificationsTab() {
                         <a href={selectedCert.url} target="_blank" rel="noopener noreferrer" 
                            className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 text-accent font-semibold rounded-full border border-accent/30 hover:bg-accent/20 transition-colors mt-4">
                            <ExternalLink size={18} />
-                           Vérifier la Certification
+                           Check the Certification
                         </a>
                     </div>
                 )}

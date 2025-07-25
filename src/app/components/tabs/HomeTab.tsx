@@ -22,18 +22,18 @@ const skillCategories = [
     },
     { 
         icon: Zap, 
-        title: "DevOps & Automatisation", 
+        title: "DevOps & Automation", 
         skills: ["terraform", "helm", "argocd", "github", "bash"] 
     },
     { 
         icon: Lock, 
-        title: "Sécurité & Réseau", 
+        title: "Security & Network", 
         skills: ["vpn", "iam", "cisco", "pfsense"] 
     },
     {
         icon: BarChart,
         title: "Monitoring & Optimization",
-        skills: ["prometheus", "cloudcost"]
+        skills: ["prometheus", "grafana"]
     }
 ];
 
@@ -43,9 +43,9 @@ export default function HomeTab() {
             
             {/* --- Colonne de Gauche : "About Me" & Contact --- */}
             <div className="lg:col-span-2 space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left">
-                <h2 className="text-3xl font-bold text-accent">À Propos de Moi</h2>
+                <h2 className="text-3xl font-bold text-accent">About Me</h2>
                 <p className="text-secondary leading-relaxed">
-                    [cite_start]Ingénieur Cloud & DevOps passionné par l&apos;automatisation et la sécurisation des infrastructures. Je transforme des défis complexes en systèmes performants et résilients, en m&apos;appuyant sur une expertise solide avec des outils comme AWS, Kubernetes et Docker. [cite: 5, 6, 7]
+                    Cloud, DevOps, and Cybersecurity Engineer passionate about automating and securing infrastructure. I transform complex challenges into high-performance, resilient systems, leveraging extensive expertise with tools like AWS, Kubernetes, and Docker.
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -60,13 +60,13 @@ export default function HomeTab() {
                 <a href="/CV_Alexandre_Dembele.pdf" download
                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 text-accent font-semibold rounded-full border border-accent/30 hover:bg-accent/20 transition-colors">
                     <Download size={18} />
-                    Télécharger mon CV
+                    Download my resume
                 </a>
             </div>
 
             {/* --- Colonne de Droite : Compétences --- */}
             <div className="lg:col-span-3 space-y-6">
-                <h2 className="text-3xl font-bold text-accent text-center lg:text-left">Mes Compétences</h2>
+                <h2 className="text-3xl font-bold text-accent text-center lg:text-left">Skills</h2>
                 {skillCategories.map(category => (
                     <div key={category.title} className="p-6 bg-card-bg border border-border-color rounded-xl">
                         <div className="flex items-center gap-3 mb-4">

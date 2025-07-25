@@ -78,7 +78,7 @@ export default function ProjectsTab() {
         return (
             <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
                 <AlertTriangle className="h-12 w-12 text-red-500 mb-4"/>
-                <h3 className="text-xl font-bold text-red-400">Erreur de chargement des projets</h3>
+                <h3 className="text-xl font-bold text-red-400">Failed to load projects</h3>
                 <p className="text-red-300/80 mt-2">{error}</p>
             </div>
         );
@@ -88,7 +88,7 @@ export default function ProjectsTab() {
         <>
             {/* --- GRILLE DES PROJETS --- */}
             <div>
-                <h2 className="text-3xl font-bold text-accent mb-8 text-center">Mes Créations Récentes</h2>
+                <h2 className="text-3xl font-bold text-accent mb-8 text-center">My Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((project) => (
                         <div key={project.id} className="group relative bg-card-bg p-4 rounded-xl border border-border-color transition-all duration-300 hover:border-accent/50 hover:scale-105">

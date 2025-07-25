@@ -5,45 +5,45 @@ import { Badge } from '@/app/components/ui/Badge';
 
 const experiences = [
     {
-        role: "Administrateur Système",
+        role: "System Administrator",
         company: "NEXAH SARL",
-        location: "Douala, Cameroun",
-        logo: "/logos/nexah.svg", // Remplacez par le vrai logo si vous l'avez
-        date: "Avril 2023 - Présent",
+        location: "Douala, Cameroon",
+        logo: "/logos/nexah.svg", 
+        date: "April 2023 - Present",
         tasks: [
-            "Migration d'une architecture AWS vers Kubernetes (EKS, Terraform, Helm, ArgoCD). [cite: 12]",
-            "Administration de l'infrastructure cloud AWS (EC2, S3, IAM, VPC, RDS). [cite: 13]",
-            "Orchestration des applications avec Kubernetes & Helm, monitoring avec Prometheus. [cite: 14]",
-            "Automatisation des déploiements CI/CD avec GitHub Actions (réduction des délais de mise en production de 40%). [cite: 15]",
-            "Optimisation des coûts cloud (-15% grâce à la containerisation Docker & Kubernetes). [cite: 16]",
-            "Renforcement de la sécurité avec IAM, VPN IPSec et monitoring avancé. [cite: 17]"
+            "Migrated an AWS architecture to Kubernetes",
+            "Managed AWS cloud infrastructure",
+            "Orchestrated applications with Kubernetes & Helm, monitored with Prometheus.",
+            "Automated CI/CD deployments with GitHub Actions (reduced deployment times by 40%)",
+            "Optimized cloud costs (-15% through Docker & Kubernetes containerization)",
+            "Strengthened security with IAM, IPSec VPN, and advanced monitoring."
         ],
         tech: ["AWS", "Kubernetes", "Docker", "Terraform", "Helm", "ArgoCD", "Prometheus", "CI/CD"]
     },
     {
-        role: "Stagiaire en Informatique",
+        role: "IT Intern",
         company: "COMETAL SA",
-        location: "Douala, Cameroun",
-        logo: "/logos/cometal.svg", // Remplacez par le vrai logo si vous l'avez
-        date: "Novembre 2021 - Janvier 2022",
+        location: "Douala, Cameroon",
+        logo: "/logos/cometal.svg", 
+        date: "November 2021 - January 2022",
         tasks: [
-            "Administration et maintenance des serveurs Windows Server. [cite: 20]",
-            "Gestion des sauvegardes et supervision des performances. [cite: 21]"
+            "Administered and maintained Windows Server systems.",
+            "Managed backups and monitored system performance."
         ],
-        tech: ["Windows Server", "Gestion de sauvegardes"]
+        tech: ["Windows Server", "Backup Solutions", "System Monitoring"]
     },
      {
-        role: "Stagiaire Administrateur Réseau",
+        role: "Network Administrator Intern",
         company: "SAUNYA Cosmetics Sarl",
-        location: "Douala, Cameroun",
-        logo: "/logos/saunya.svg", // Remplacez par le vrai logo si vous l'avez
-        date: "Novembre 2020 - Octobre 2021",
+        location: "Douala, Cameroon",
+        logo: "/logos/saunya.svg", 
+        date: "November 2020 - October 2021",
         tasks: [
-            "Mise en place d'un cloud privé OpenStack. [cite: 24]",
-            "Installation et configuration d'un portail captif pfSense. [cite: 25]",
-            "Déploiement d'un datacenter avec serveurs rack et cluster Proxmox. [cite: 26]"
+            "Deployed a private OpenStack cloud.",
+            "Installed and configured a pfSense captive portal.",
+            "Set up a datacenter with rack servers and a Proxmox cluster."
         ],
-        tech: ["OpenStack", "pfSense", "Proxmox", "Serveurs Rack"]
+        tech: ["OpenStack", "pfSense", "Proxmox", "Rack Servers"]
     }
 ];
 
