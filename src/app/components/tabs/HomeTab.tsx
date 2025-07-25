@@ -79,8 +79,8 @@ export default function HomeTab() {
                                    <Image 
                                      src={`/logos/${skill}.svg`} 
                                      alt={`Logo ${skill}`} 
-                                     width={24} 
-                                     height={24}
+                                     width={"33"} 
+                                     height={33}
                                      className="object-contain"
                                    />
                                </div>

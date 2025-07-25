@@ -50,7 +50,7 @@ const experiences = [
 export default function ExperienceTab() {
     return (
         <div>
-            <h2 className="text-3xl font-bold text-accent mb-8 text-center">Parcours Professionnel</h2>
+            <h2 className="text-3xl font-bold text-accent mb-8 text-center">Professionnal Experience</h2>
             <div className="space-y-8">
                 {experiences.map((exp, index) => (
                     <div key={index} className="flex gap-4 sm:gap-6">

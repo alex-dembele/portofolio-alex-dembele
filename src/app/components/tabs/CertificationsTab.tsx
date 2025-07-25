@@ -49,8 +49,8 @@ export default function CertificationsTab() {
                                 <Image 
                                     src={cert.logo} 
                                     alt={`Logo de ${cert.issuer}`}
-                                    width={60} 
-                                    height={60} 
+                                    width={70} 
+                                    height={70} 
                                     className="object-contain transition-transform duration-300 group-hover:scale-110"
                                 />
                             </div>
