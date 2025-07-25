@@ -93,8 +93,8 @@ export default function ProjectsTab() {
                     {projects.map((project) => (
                         <div key={project.id} className="group relative bg-card-bg p-4 rounded-xl border border-border-color transition-all duration-300 hover:border-accent/50 hover:scale-105">
                             <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden cursor-pointer" onClick={() => handleProjectClick(project)}>
-                                <Image src={`/projects/${project.name}.png`} alt={`Aperçu du projet ${project.name}`} layout="fill" objectFit="cover" onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/400x200/111827/8D9297?text=Image+Indisponible'; }} />
-                                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                             <Image src={`/projects/${project.name}.png`} alt={`Aperçu du projet ${project.name}`} layout="fill" objectFit="cover"  onError={(e) => { e.currentTarget.src = '/projects/default.png'; }}
+/>                                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
                                     <ZoomIn className="text-white h-10 w-10" />
                                 </div>
                             </div>

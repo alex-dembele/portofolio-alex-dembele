@@ -1,6 +1,5 @@
-// src/app/components/CursorTrail.tsx
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'; // <-- L'import manquant est ici
 import { motion } from 'framer-motion';
 
 export const CursorTrail = () => {
@@ -20,7 +19,7 @@ export const CursorTrail = () => {
         <motion.div
             className="pointer-events-none fixed -inset-px rounded-full"
             style={{
-                background: `radial-gradient(200px at ${mousePosition.x}px ${mousePosition.y}px, rgba(34, 197, 94, 0.15), transparent 80%)`
+                background: `radial-gradient(250px at ${mousePosition.x}px ${mousePosition.y}px, rgba(var(--primary-glow), 0.15), transparent 80%)`
             }}
         />
     );
