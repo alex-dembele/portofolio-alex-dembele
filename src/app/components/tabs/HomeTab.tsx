@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { Download, Cloud, Lock, Zap, BarChart } from 'lucide-react';
+import { Download, Cloud, Lock, Zap, BarChart, Monitor } from 'lucide-react';
 import { FaLinkedin, FaMedium, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
@@ -31,7 +31,7 @@ const skillCategories = [
         skills: ["vpn", "iam", "cisco", "pfsense"] 
     },
     {
-        icon: BarChart,
+        icon: Monitor,
         title: "Monitoring & Optimization",
         skills: ["prometheus", "grafana"]
     }
