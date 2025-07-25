@@ -9,9 +9,9 @@ const socialLinks = [
     { icon: MdEmail, url: 'mailto:alexandredembele16@gmail.com', name: 'Email' },
     { icon: FaLinkedin, url: 'https://linkedin.com/in/alexandre-dembele-b80a01225', name: 'LinkedIn' },
     { icon: FaMedium, url: '#', name: 'Medium' },
-    { icon: FaTwitter, url: '#', name: 'Twitter (X)' },
-    { icon: FaInstagram, url: '#', name: 'Instagram' },
-    { icon: FaFacebook, url: '#', name: 'Facebook' },
+    { icon: FaTwitter, url: 'https://x.com/alexandredembe2?s=21', name: 'Twitter (X)' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/xdembouz?igsh=MTk1dW1wMHB6NjY5OQ%3D%3D&utm_source=qr', name: 'Instagram' },
+    { icon: FaFacebook, url: 'https://www.facebook.com/share/14H76PshByi/?mibextid=wwXIfr', name: 'Facebook' },
 ];
 
 const skillCategories = [

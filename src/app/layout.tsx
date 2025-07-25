@@ -1,4 +1,3 @@
-// src/app/layout.tsx (Version Corrigée)
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -9,8 +8,8 @@ import { CursorTrail } from './components/CursorTrail';
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alexandre Dembele | Ingénieur Systèmes & Réseaux",
-  description: "Portfolio d'Alexandre Dembele, spécialisé en Cloud, DevOps et Cybersécurité, basé sur son CV.",
+  title: "Alexandre Dembele | Systems & Network Engineer | Cloud & DevOps | Cybersecurity",
+  description: "Portfolio of Alexandre Dembele, specialized in Cloud, DevOps and Cybersecurity, based on his CV.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
