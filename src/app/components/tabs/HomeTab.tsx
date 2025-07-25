@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { Download, Cloud, Lock, Zap } from 'lucide-react';
+import { Download, Cloud, Lock, Zap, BarChart } from 'lucide-react';
 import { FaLinkedin, FaMedium, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
@@ -18,18 +18,23 @@ const skillCategories = [
     { 
         icon: Cloud, 
         title: "Cloud & Infrastructure", 
-        skills: ["AWS", "Kubernetes", "Docker", "OpenStack", "Azure", "Google Cloud"] 
+        skills: ["aws", "kubernetes", "docker", "openstack", "azure", "google-cloud"] 
     },
     { 
         icon: Zap, 
         title: "DevOps & Automatisation", 
-        skills: ["Terraform", "Helm", "ArgoCD", "CI/CD", "GitHub Actions", "Bash Scripting"] 
+        skills: ["terraform", "helm", "argocd", "github", "bash"] 
     },
     { 
         icon: Lock, 
         title: "Sécurité & Réseau", 
-        skills: ["VPN IPSec", "IAM", "Threat Intelligence", "Cisco", "pfSense", "LAN/WAN"] 
+        skills: ["vpn", "iam", "cisco", "pfsense"] 
     },
+    {
+        icon: BarChart,
+        title: "Monitoring & Optimization",
+        skills: ["prometheus", "cloudcost"]
+    }
 ];
 
 export default function HomeTab() {
@@ -37,13 +42,10 @@ export default function HomeTab() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
             
             {/* --- Colonne de Gauche : "About Me" & Contact --- */}
-            <div className="lg:col-span-2 space-y-6">
-                
-                {/* Le bloc de la photo de profil a été retiré ici */}
-                
+            <div className="lg:col-span-2 space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left">
                 <h2 className="text-3xl font-bold text-accent">À Propos de Moi</h2>
                 <p className="text-secondary leading-relaxed">
-                    Ingénieur Cloud & DevOps passionné par l'automatisation et la sécurisation des infrastructures. Je transforme des défis complexes en systèmes performants et résilients, en m'appuyant sur une expertise solide avec des outils comme AWS, Kubernetes et Docker.
+                    [cite_start]Ingénieur Cloud & DevOps passionné par l&apos;automatisation et la sécurisation des infrastructures. Je transforme des défis complexes en systèmes performants et résilients, en m&apos;appuyant sur une expertise solide avec des outils comme AWS, Kubernetes et Docker. [cite: 5, 6, 7]
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -64,22 +66,29 @@ export default function HomeTab() {
 
             {/* --- Colonne de Droite : Compétences --- */}
             <div className="lg:col-span-3 space-y-6">
-                <h2 className="text-3xl font-bold text-accent">Mes Compétences</h2>
+                <h2 className="text-3xl font-bold text-accent text-center lg:text-left">Mes Compétences</h2>
                 {skillCategories.map(category => (
                     <div key={category.title} className="p-6 bg-card-bg border border-border-color rounded-xl">
                         <div className="flex items-center gap-3 mb-4">
                            <category.icon className="w-6 h-6 text-accent" />
                            <h3 className="text-lg font-bold text-primary">{category.title}</h3>
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-4 items-center">
                            {category.skills.map(skill => (
-                               <span key={skill} className="px-3 py-1 text-sm bg-gray-700/50 text-gray-300 border border-gray-600 rounded-full">{skill}</span>
+                               <div key={skill} className="flex items-center justify-center p-2 bg-gray-700/30 rounded-full" title={skill.charAt(0).toUpperCase() + skill.slice(1)}>
+                                   <Image 
+                                     src={`/logos/${skill}.svg`} 
+                                     alt={`Logo ${skill}`} 
+                                     width={24} 
+                                     height={24}
+                                     className="object-contain"
+                                   />
+                               </div>
                            ))}
                         </div>
                     </div>
                 ))}
             </div>
-
         </div>
     );
 }

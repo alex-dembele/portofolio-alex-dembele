@@ -1,76 +1,76 @@
-// src/app/components/tabs/ExperienceTab.tsx (Nouvelle version)
+// src/app/components/tabs/ExperienceTab.tsx (Version Finale)
+import Image from 'next/image';
 import { Briefcase } from 'lucide-react';
 import { Badge } from '@/app/components/ui/Badge';
 
 const experiences = [
     {
-        role: "System Administrator",
-        company: "NEXAH SARL - Douala, Cameroon",
-        date: "Avril 2023 - Present",
+        role: "Administrateur Système",
+        company: "NEXAH SARL",
+        location: "Douala, Cameroun",
+        logo: "/logos/nexah.svg", // Remplacez par le vrai logo si vous l'avez
+        date: "Avril 2023 - Présent",
         tasks: [
-            "Migrated an AWS architecture to Kubernetes",
-            "Managed AWS cloud infrastructure",
-            "Orchestrated applications with Kubernetes & Helm, monitored with Prometheus.",
-            "Automated CI/CD deployments with GitHub Actions",
-            "Optimized cloud costs (-35% through Docker & Kubernetes containerization)",
-            "Strengthened security with IAM, IPSec VPN, and advanced monitoring."
+            "Migration d'une architecture AWS vers Kubernetes (EKS, Terraform, Helm, ArgoCD). [cite: 12]",
+            "Administration de l'infrastructure cloud AWS (EC2, S3, IAM, VPC, RDS). [cite: 13]",
+            "Orchestration des applications avec Kubernetes & Helm, monitoring avec Prometheus. [cite: 14]",
+            "Automatisation des déploiements CI/CD avec GitHub Actions (réduction des délais de mise en production de 40%). [cite: 15]",
+            "Optimisation des coûts cloud (-15% grâce à la containerisation Docker & Kubernetes). [cite: 16]",
+            "Renforcement de la sécurité avec IAM, VPN IPSec et monitoring avancé. [cite: 17]"
         ],
-        // On extrait les technologies clés pour les mettre en évidence
-        tech: ["AWS", "Kubernetes", "Docker", "Terraform", "Helm", "ArgoCD", "Prometheus", "CI/CD", "EKS"]
+        tech: ["AWS", "Kubernetes", "Docker", "Terraform", "Helm", "ArgoCD", "Prometheus", "CI/CD"]
     },
     {
-        role: "IT Intern",
-        company: "COMETAL SA - Douala, Cameroun",
-        date: "November 2021 - January 2022",
+        role: "Stagiaire en Informatique",
+        company: "COMETAL SA",
+        location: "Douala, Cameroun",
+        logo: "/logos/cometal.svg", // Remplacez par le vrai logo si vous l'avez
+        date: "Novembre 2021 - Janvier 2022",
         tasks: [
-            "Administered and maintained Windows Server systems.",
-            "Managed backups and monitored system performance. "
+            "Administration et maintenance des serveurs Windows Server. [cite: 20]",
+            "Gestion des sauvegardes et supervision des performances. [cite: 21]"
         ],
-        tech: ["Windows Server", "Network saves"]
+        tech: ["Windows Server", "Gestion de sauvegardes"]
     },
      {
-        role: "Network Administrator Intern",
-        company: "SAUNYA Cosmetics Sarl - Douala, Cameroun",
-        date: "November 2020 - October 2021",
+        role: "Stagiaire Administrateur Réseau",
+        company: "SAUNYA Cosmetics Sarl",
+        location: "Douala, Cameroun",
+        logo: "/logos/saunya.svg", // Remplacez par le vrai logo si vous l'avez
+        date: "Novembre 2020 - Octobre 2021",
         tasks: [
-            "Deployed a private OpenStack cloud.",
-            "Installed and configured a pfSense captive portal.",
-            "Set up a datacenter with rack servers and a Proxmox cluster."
+            "Mise en place d'un cloud privé OpenStack. [cite: 24]",
+            "Installation et configuration d'un portail captif pfSense. [cite: 25]",
+            "Déploiement d'un datacenter avec serveurs rack et cluster Proxmox. [cite: 26]"
         ],
-        tech: ["OpenStack", "pfSense", "Proxmox", "Rack Server", "Synology"]
+        tech: ["OpenStack", "pfSense", "Proxmox", "Serveurs Rack"]
     }
 ];
 
 export default function ExperienceTab() {
     return (
         <div>
-            <h2 className="text-3xl font-bold text-green-400 mb-8 text-center">Professionnal Experience</h2>
+            <h2 className="text-3xl font-bold text-accent mb-8 text-center">Parcours Professionnel</h2>
             <div className="space-y-8">
                 {experiences.map((exp, index) => (
                     <div key={index} className="flex gap-4 sm:gap-6">
-                        {/* --- Icône de la Timeline --- */}
                         <div className="relative flex flex-col items-center">
-                            <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-black/30 rounded-full border-2 border-green-500/50">
-                                <Briefcase className="w-6 h-6 text-green-400" />
+                            <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-black/30 rounded-full border-2 border-border-color p-1">
+                                <Image src={exp.logo} alt={`Logo ${exp.company}`} width={40} height={40} className="rounded-full object-contain" onError={(e) => { e.currentTarget.src = '/logos/default.svg'; }} />
                             </div>
-                            {/* Ligne verticale connectant les points */}
                             {index < experiences.length - 1 && (
-                                <div className="flex-grow w-px bg-white/10 mt-4"></div>
+                                <div className="flex-grow w-px bg-border-color mt-4"></div>
                             )}
                         </div>
-
-                        {/* --- Contenu de l'expérience --- */}
                         <div className="w-full">
                            <div className="flex justify-between items-start mb-1 flex-col sm:flex-row">
-                               <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
+                               <h3 className="text-lg font-semibold text-primary">{exp.role}</h3>
                                <time className="text-sm font-normal text-secondary sm:ml-4 flex-shrink-0">{exp.date}</time>
                            </div>
-                           <p className="text-base text-secondary mb-3">{exp.company}</p>
-                           
-                           <ul className="list-disc list-inside space-y-1.5 text-gray-300 text-sm pl-2 mb-4">
+                           <p className="text-base text-secondary mb-3">{exp.company} - {exp.location}</p>
+                           <ul className="list-disc list-inside space-y-1.5 text-secondary text-sm pl-2 mb-4">
                                {exp.tasks.map((task, i) => <li key={i}>{task}</li>)}
                            </ul>
-
                            <div className="flex flex-wrap gap-2">
                                 {exp.tech.map((techItem) => (
                                     <Badge key={techItem} className="bg-gray-700/50 text-gray-300 border-gray-600">
