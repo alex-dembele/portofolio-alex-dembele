@@ -23,7 +23,7 @@ const skillCategories = [
     { 
         icon: Zap, 
         title: "DevOps & Automation", 
-        skills: ["terraform", "helm", "argocd", "github", "bash"] 
+        skills: ["terraform", "helm", "argocd", "github actions", "bash"] 
     },
     { 
         icon: Lock, 
