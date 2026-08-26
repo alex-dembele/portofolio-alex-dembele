@@ -5,11 +5,27 @@ import { Badge } from '@/app/components/ui/Badge';
 
 const experiences = [
     {
+        role: "DevOps Engineer",
+        company: "LIONGATE Sarl",
+        location: "Douala, Cameroon",
+        logo: "/logos/liongate.png", 
+        date: "April 2023 - August 2026",
+        tasks: [
+            "Design, implement, and maintain CI/CD pipelines to accelerate software delivery and reduce deployment risks",
+            "Deploy and manage containerized applications in Kubernetes and Docker-based environments",
+            "Automate infrastructure provisioning, configuration, and environment consistency with Terraform and IaC best practices",
+            "Monitor application health, system performance, and infrastructure metrics with observability tools",
+            "Improve security posture by enforcing IAM policies, deployment hardening, and infrastructure best practices",
+            "Collaborate with teams to streamline release workflows, reduce manual operations, and improve platform reliability",
+            "Support cloud optimization and high-availability architecture for business-critical services" ],
+        tech: ["AWS", "Kubernetes", "Docker", "Terraform", "Helm", "ArgoCD", "Prometheus", "CI/CD"]
+    },
+        {
         role: "System Administrator",
         company: "NEXAH SARL",
         location: "Douala, Cameroon",
         logo: "/logos/nexah.svg", 
-        date: "April 2023 - Present",
+        date: "April 2023 - August 2026",
         tasks: [
             "Migrated an AWS architecture to Kubernetes",
             "Managed AWS cloud infrastructure",
