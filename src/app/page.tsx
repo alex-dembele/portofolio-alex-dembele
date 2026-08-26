@@ -37,7 +37,7 @@ export default function Home() {
                 {/* --- Section Entête / Profil --- */}
                 <div className="flex flex-col items-center mb-8 text-center">
                     <h1 className="text-3xl md:text-4xl font-bold text-primary">ALEXANDRE DEMBELE</h1>
-                    <p className="text-base md:text-lg text-secondary mt-1">Systems & Network Engineer | Cloud & DevOps | Cybersecurity</p>
+                    <p className="text-base md:text-lg text-secondary mt-1">Cloud & DevOps Engineer | Systems & Network | Cybersecurity</p>
                 </div>
 
                 {/* --- Section Navigation par Onglets (Responsive) --- */}
